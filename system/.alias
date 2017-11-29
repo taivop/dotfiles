@@ -28,3 +28,4 @@ alias robo3t="~/robo3t/bin/robo3t &> /dev/null &"
 alias datagrip="sh ~/dw/DataGrip-2017.2.2/bin/datagrip.sh &> /dev/null &"
 alias open=xdg-open
 alias ce="cd ~/echo" 
+eval $(thefuck --alias)
