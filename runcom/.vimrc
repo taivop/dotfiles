@@ -59,3 +59,13 @@ let g:airline_solarized_bg='dark'
 set number			" Line numbers
 set numberwidth=3
 
+
+" {{{ Fix bracketed paste problem
+" workaround for https://github.com/vim/vim/issues/1start671
+if has("unix")
+  let s:uname = system("echo -n \"$(uname)\"")
+  if !v:shell_error && s:uname == "Linux"
+    set t_BE=
+  endif
+endif
+" }}}
