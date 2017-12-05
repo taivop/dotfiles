@@ -31,7 +31,7 @@ alias ce="cd ~/echo"
 alias top="htop"
 alias h="history"
 alias ccat='pygmentize -g'
-
+alias xclip="xclip -selection clipboard"
 eval $(thefuck --alias)
 
 

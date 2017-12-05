@@ -16,6 +16,8 @@ Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Bundle 'edkolev/tmuxline.vim'
+
 
 Plugin 'altercation/solarized'
 
@@ -60,6 +62,8 @@ let g:airline_solarized_bg='dark'
 set number			" Line numbers
 set numberwidth=3
 
+" Copy and pastes
+set clipboard=unnamed
 
 " {{{ Fix bracketed paste problem
 " workaround for https://github.com/vim/vim/issues/1start671
