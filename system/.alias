@@ -22,3 +22,40 @@ alias gac='git add -A && git commit -m'
 
 # ---- Various ----
 alias pungasee="ssh -p 1022 vhost39151ssh@pungas.ee"
+alias vpn="cd ~/.vpn/ && sudo openvpn --config ~/.vpn/starship-vpn.ovpn"
+alias sqlworkbench="sh ~/dw/workbench/sqlworkbench.sh &> /dev/null &"
+alias robo3t="~/robo3t/bin/robo3t &> /dev/null &"
+alias datagrip="sh ~/dw/DataGrip-2017.2.2/bin/datagrip.sh &> /dev/null &"
+alias open=xdg-open
+alias ce="cd ~/echo" 
+alias top="htop"
+alias h="history"
+alias ccat='pygmentize -g'
+alias xclip="xclip -selection clipboard"
+eval $(thefuck --alias)
+
+
+
+# ---- Colorisation ----
+GRC=$(which grc)
+if [ -n GRC ]; then
+    alias colourify='$GRC -es --colour=auto'
+    alias as='colourify as'
+    alias configure='colourify ./configure'
+    alias diff='colourify diff'
+    alias dig='colourify dig'
+    alias g++='colourify g++'
+    alias gas='colourify gas'
+    alias gcc='colourify gcc'
+    alias head='colourify head'
+    alias ifconfig='colourify ifconfig'
+    alias ld='colourify ld'
+    alias ls='colourify ls'
+    alias make='colourify make'
+    alias mount='colourify mount'
+    alias netstat='colourify netstat'
+    alias ping='colourify ping'
+    alias ps='colourify ps'
+    alias tail='colourify tail'
+    alias traceroute='colourify traceroute'
+fi

@@ -1,11 +1,10 @@
 [user]
 	name = taivop
-	email = taivo.pungas@gmail.com
-	signingkey = B42EC862
+	email = taivo.pungas@starship.co
 [credential]
-	helper = osxkeychain
+	helper = store
 [push]
 	default = simple
 [core]
-	excludesfile = /Users/taivo/.gitignore_global
-	editor = sublime -n -w
+	excludesfile = ~/.dotfiles/git/.gitignore_global
+	editor = subl -n -w
