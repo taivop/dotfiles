@@ -36,6 +36,13 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+"leader
+let mapleader = ","
+map <leader>f :YcmCompleter FixIt<CR>
+map <leader>g :YcmCompleter GoTo<CR>
+
+
+set showcmd
 syntax enable
 autocmd FileType python syn match pythonStatement "\(\W\|^\)\@<=self\([\.,)]\)\@="
 
@@ -58,6 +65,8 @@ set t_Co=256
 
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
+
+"let g:tmuxline_preset = 'solarized_visual'
 
 set number			" Line numbers
 set numberwidth=3
