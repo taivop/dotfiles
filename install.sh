@@ -1,6 +1,8 @@
-ln -sv "/Users/taivo/.dotfiles/runcom/.bash_profile" ~
-ln -sv "/Users/taivo/.dotfiles/runcom/.inputrc" ~
-ln -sv "/Users/taivo/.dotfiles/git/.gitconfig" ~
-ln -sv "/Users/taivo/.dotfiles/git/.gitignore_global" ~
-ln -sv "/Users/taivo/.dotfiles/tmux/.tmux.conf" ~
-ln -sv "/Users/taivo/.dotfiles/tmux/.tmuxline" ~
+DOTFILES_DIR=`echo $HOME`/.dotfiles
+ln -sfv "$DOTFILES_DIR/runcom/.bash_profile" ~
+ln -sfv "$DOTFILES_DIR/runcom/.inputrc" ~
+ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
+ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
+ln -sfv "$DOTFILES_DIR/runcom/.vimrc" ~
+ln -sfv "$DOTFILES_DIR/tmux/.tmux.conf" ~
+ln -sfv "$DOTFILES_DIR/tmux/.tmuxline" ~
