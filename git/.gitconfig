@@ -7,4 +7,4 @@
 	default = simple
 [core]
 	excludesfile = ~/.dotfiles/git/.gitignore_global
-	editor = subl -n -w
+	editor = vim #subl -n -w

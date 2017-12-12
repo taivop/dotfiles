@@ -66,7 +66,8 @@ set t_Co=256
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 
-"let g:tmuxline_preset = 'solarized_visual'
+let g:airline#extensions#tmuxline#enabled = 0
+let g:tmuxline_theme = 'airline_visual'
 
 set number			" Line numbers
 set numberwidth=3
