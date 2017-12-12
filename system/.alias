@@ -1,4 +1,5 @@
 # ---- Platform specific ----
+# https://stackoverflow.com/questions/394230/detect-the-os-from-a-bash-script
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	# Linux
 	alias open=xdg-open
@@ -10,8 +11,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	alias xclip="xclip -selection clipboard"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 	# Mac OSX
+	:
 else
-# Unknown.
+	# Unknown
+	:
 fi
 
 # ---- Filesystem ----
