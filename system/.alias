@@ -1,3 +1,19 @@
+# ---- Platform specific ----
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+	# Linux
+	alias open=xdg-open
+	alias ce="cd ~/echo"
+	alias vpn="cd ~/.vpn/ && sudo openvpn --config ~/.vpn/starship-vpn.ovpn"
+	alias sqlworkbench="sh ~/dw/workbench/sqlworkbench.sh &> /dev/null &"
+	alias robo3t="~/robo3t/bin/robo3t &> /dev/null &"
+	alias datagrip="sh ~/dw/DataGrip-2017.2.2/bin/datagrip.sh &> /dev/null &"
+	alias xclip="xclip -selection clipboard"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+	# Mac OSX
+else
+# Unknown.
+fi
+
 # ---- Filesystem ----
 alias l="ls -la"       # List in long format, include dotfiles
 alias ld="ls -ld */"   # List in long format, only directories
@@ -22,16 +38,9 @@ alias gac='git add -A && git commit -m'
 
 # ---- Various ----
 alias pungasee="ssh -p 1022 vhost39151ssh@pungas.ee"
-alias vpn="cd ~/.vpn/ && sudo openvpn --config ~/.vpn/starship-vpn.ovpn"
-alias sqlworkbench="sh ~/dw/workbench/sqlworkbench.sh &> /dev/null &"
-alias robo3t="~/robo3t/bin/robo3t &> /dev/null &"
-alias datagrip="sh ~/dw/DataGrip-2017.2.2/bin/datagrip.sh &> /dev/null &"
-alias open=xdg-open
-alias ce="cd ~/echo" 
 alias top="htop"
 alias h="history"
 alias ccat='pygmentize -g'
-alias xclip="xclip -selection clipboard"
 eval $(thefuck --alias)
 
 
