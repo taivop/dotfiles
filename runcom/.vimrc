@@ -73,7 +73,7 @@ set number			" Line numbers
 set numberwidth=3
 
 " Copy and pastes
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " {{{ Fix bracketed paste problem
 " workaround for https://github.com/vim/vim/issues/1start671
