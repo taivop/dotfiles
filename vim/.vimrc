@@ -41,6 +41,8 @@ let mapleader = ","
 map <leader>f :YcmCompleter FixIt<CR>
 map <leader>g :YcmCompleter GoTo<CR>
 
+let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_autoclose_preview_window_after_completion=1
 
 set showcmd
 syntax enable
@@ -71,6 +73,9 @@ let g:tmuxline_theme = 'airline_visual'
 
 set number			" Line numbers
 set numberwidth=3
+
+" YCM configuration
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 " Copy and pastes
 set clipboard=unnamedplus
