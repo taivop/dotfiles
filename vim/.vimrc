@@ -18,8 +18,14 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Bundle 'edkolev/tmuxline.vim'
 
-
+Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/solarized'
+
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -44,6 +50,17 @@ map <leader>g :YcmCompleter GoTo<CR>
 let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_autoclose_preview_window_after_completion=1
 
+" Ultisnips
+" Trigger configuration. Do not use <tab> if you use
+let g:UltiSnipsExpandTrigger="<leader><leader>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsListSnippets="<c-l>"
+let g:snips_author = 'Taivo Pungas'
+let g:snips_email = 'taivo@pungas.ee'
+let g:snips_github = 'taivop'
+
+
 set showcmd
 syntax enable
 autocmd FileType python syn match pythonStatement "\(\W\|^\)\@<=self\([\.,)]\)\@="
@@ -52,6 +69,11 @@ nmap <Right> >>
 nmap <Left> <<
 nmap <Down> ddp
 nmap <Up> dd2kp
+
+" Make tab characters appear 4 spaces wide
+set tabstop=4
+set softtabstop=0 noexpandtab
+set shiftwidth=4
 
 " Searching {{{
 set incsearch                   " incremental searching

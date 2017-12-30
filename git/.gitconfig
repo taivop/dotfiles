@@ -6,5 +6,5 @@
 [push]
 	default = simple
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = /home/taivo/.gitignore_global
 	editor = vim #subl -n -w
