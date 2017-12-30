@@ -1,3 +1,5 @@
+mkdir $HOME/.vim
+
 DOTFILES_DIR=`echo $HOME`/.dotfiles
 ln -sfv "$DOTFILES_DIR/runcom/.bash_profile" ~
 ln -sfv "$DOTFILES_DIR/runcom/.inputrc" ~
