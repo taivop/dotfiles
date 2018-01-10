@@ -100,7 +100,12 @@ set numberwidth=3
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 " Copy and pastes
-set clipboard=unnamedplus
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
 
 " {{{ Fix bracketed paste problem
 " workaround for https://github.com/vim/vim/issues/1start671
