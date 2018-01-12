@@ -122,6 +122,4 @@ endif
 " }}}
 
 " Enable mouse support
-set mou
-" Enable mouse support
 set mouse=a
