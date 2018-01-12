@@ -1,4 +1,3 @@
-set nocompatible              " be iMproved, required
 filetype off                  " required
 set encoding=utf-8
 
@@ -26,6 +25,9 @@ Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
+
+" NERDTree
+Plugin 'https://github.com/scrooloose/nerdtree.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -60,6 +62,8 @@ let g:snips_author = 'Taivo Pungas'
 let g:snips_email = 'taivo@pungas.ee'
 let g:snips_github = 'taivop'
 
+" Nerdtree
+noremap <leader>n :NERDTreeToggle<cr>
 
 set showcmd
 syntax enable
@@ -116,3 +120,8 @@ if has("unix")
   endif
 endif
 " }}}
+
+" Enable mouse support
+set mou
+" Enable mouse support
+set mouse=a

@@ -4,6 +4,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	# Linux
 	alias open=xdg-open
 	alias ce="cd ~/echo"
+	alias cec="cd ~/echo && catkin_make"
 	alias vpn="cd ~/.vpn/ && sudo openvpn --config ~/.vpn/starship-vpn.ovpn"
 	alias sqlworkbench="sh ~/dw/workbench/sqlworkbench.sh &> /dev/null &"
 	alias robo3t="~/robo3t/bin/robo3t &> /dev/null &"
