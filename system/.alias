@@ -2,15 +2,17 @@
 # https://stackoverflow.com/questions/394230/detect-the-os-from-a-bash-script
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	# Linux
-	alias open=xdg-open
+	alias open="xdg-open 2>/dev/null"
 	alias ce="cd ~/echo"
 	alias cm="catkin_make"
+	alias catkin_make_debug="catkin_make -DCMAKE_BUILD_TYPE=Debug"
 	alias cecm="cd ~/echo && catkin_make"
 	alias vpn="cd ~/.vpn/ && sudo openvpn --config ~/.vpn/starship-vpn.ovpn"
 	alias sqlworkbench="sh ~/dw/workbench/sqlworkbench.sh &> /dev/null &"
 	alias robo3t="~/robo3t/bin/robo3t &> /dev/null &"
-	alias datagrip="sh ~/dw/DataGrip-2017.2.2/bin/datagrip.sh &> /dev/null &"
+	alias datagrip="sh ~/dw/DataGrip-2018.2/bin/datagrip.sh &> /dev/null &"
 	alias xclip="xclip -selection clipboard"
+	#alias PotreeConverter="~/echo/potree/PotreeConverter/build/PotreeConverter/PotreeConverter"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 	# Mac OSX
 	:
@@ -21,6 +23,7 @@ fi
 
 # ---- Filesystem ----
 alias l="ls -lhap"       # List in long format, include dotfiles
+alias rm="rm -I"
 #alias ld="ls -ld */"   # List in long format, only directories
 alias ..="cd .."
 alias ...="cd ../.."
@@ -48,7 +51,7 @@ alias h="history"
 alias ccat='pygmentize -g'
 eval $(thefuck --alias)
 alias art="figlet -f banner"
-
+alias todo="grep -rne TODO"
 
 # ---- Colorisation ----
 GRC=$(which grc)

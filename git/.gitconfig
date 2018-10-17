@@ -8,3 +8,5 @@
 [core]
 	excludesfile = /home/taivo/.gitignore_global
 	editor = vim #subl -n -w
+[pull]
+	rebase = true
