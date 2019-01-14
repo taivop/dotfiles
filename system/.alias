@@ -6,7 +6,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	alias vpn="cd ~/.vpn/ && sudo openvpn --config ~/.vpn/starship-vpn.ovpn"
 	alias sqlworkbench="sh ~/dw/workbench/sqlworkbench.sh &> /dev/null &"
 	alias robo3t="~/robo3t/bin/robo3t &> /dev/null &"
-	alias datagrip="sh ~/dw/DataGrip-2018.2/bin/datagrip.sh &> /dev/null &"
+	alias datagrip="sh ~/DataGrip-2018.2.4/bin/datagrip.sh &> /dev/null &"
+    alias dbtunnel="ssh 10.1.2.254"
 	alias xclip="xclip -selection clipboard"
 	#alias PotreeConverter="~/echo/potree/PotreeConverter/build/PotreeConverter/PotreeConverter"
 elif [[ "$OSTYPE" == "darwin"* ]]; then

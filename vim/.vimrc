@@ -55,6 +55,9 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+"https://stackoverflow.com/questions/4597721/syntax-highlight-for-ejs-files-in-vim
+au BufNewFile,BufRead *.ejs set filetype=html
+
 "leader
 let mapleader = ","
 map <leader>f :YcmCompleter FixIt<CR>
