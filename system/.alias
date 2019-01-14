@@ -9,9 +9,12 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	alias datagrip="sh ~/DataGrip-2018.2.4/bin/datagrip.sh &> /dev/null &"
     alias dbtunnel="ssh 10.1.2.254"
 	alias xclip="xclip -selection clipboard"
+    alias rm="rm -I"
 	#alias PotreeConverter="~/echo/potree/PotreeConverter/build/PotreeConverter/PotreeConverter"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 	# Mac OSX
+    alias vim="mvim -v"
+    alias vi="mvim -v"
 	:
 else
 	# Unknown
@@ -20,7 +23,6 @@ fi
 
 # ---- Filesystem ----
 alias l="ls -lhap"       # List in long format, include dotfiles
-alias rm="rm -I"
 #alias ld="ls -ld */"   # List in long format, only directories
 alias ..="cd .."
 alias ...="cd ../.."
@@ -46,8 +48,6 @@ alias pungasee="ssh -p 1022 vhost39151ssh@pungas.ee"
 alias top="htop"
 alias h="history"
 alias ccat='pygmentize -g'
-eval $(thefuck --alias)
-alias art="figlet -f banner"
 alias todo="grep -rne TODO"
 
 # ---- Colorisation ----

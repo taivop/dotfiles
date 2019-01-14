@@ -124,7 +124,7 @@ set background=dark
 colorscheme solarized
 set t_Co=256
 
-let g:airline_theme='solarized'
+let g:airline_theme='bubblegum'
 let g:airline_solarized_bg='dark'
 
 let g:airline#extensions#tmuxline#enabled = 0
@@ -151,6 +151,7 @@ vnoremap <Leader>, :Tabularize /,\zs<CR>
 let g:tick_fmt_autosave = 0
 
 " Copy and pastes
+"set clipboard=unnamed
 vmap <Leader>y "+y
 vmap <Leader>d "+d
 nmap <Leader>p "+p
