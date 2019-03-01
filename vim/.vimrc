@@ -34,7 +34,7 @@ Plugin 'hashivim/vim-terraform'
 Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
+Plugin 'taivop/vim-snippets'
 
 
 " NERDTree
@@ -76,7 +76,7 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsListSnippets="<c-l>"
 let g:snips_author = 'Taivo Pungas'
-let g:snips_email = 'taivo.pungas@starship.xyz'
+let g:snips_email = 'taivo@pungas.ee'
 let g:snips_github = 'taivop'
 let g:ultisnips_python_style = 'numpy'
 

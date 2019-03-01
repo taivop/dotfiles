@@ -7,7 +7,6 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	alias sqlworkbench="sh ~/dw/workbench/sqlworkbench.sh &> /dev/null &"
 	alias robo3t="~/robo3t/bin/robo3t &> /dev/null &"
 	alias datagrip="sh ~/DataGrip-2018.2.4/bin/datagrip.sh &> /dev/null &"
-    alias dbtunnel="ssh 10.1.2.254"
 	alias xclip="xclip -selection clipboard"
     alias rm="rm -I"
 	#alias PotreeConverter="~/echo/potree/PotreeConverter/build/PotreeConverter/PotreeConverter"
@@ -20,6 +19,8 @@ else
 	# Unknown
 	:
 fi
+
+alias dbtunnel="ssh 10.1.2.254"
 
 # ---- Filesystem ----
 alias l="ls -lhap"       # List in long format, include dotfiles

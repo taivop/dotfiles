@@ -1,6 +1,6 @@
 [user]
 	name = taivop
-	email = taivo.pungas@starship.co
+	email = taivo@pungas.ee
 [credential]
 	helper = store
 [push]
@@ -10,3 +10,5 @@
 	editor = vim #subl -n -w
 [pull]
 	rebase = true
+[rebase]
+	autoStash = true
