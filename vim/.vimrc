@@ -169,5 +169,8 @@ if has("unix")
 endif
 " }}}
 
+" Auto-remove trailing whitespace
+autocmd BufWritePre * %s/\s\+$//e
+
 " Enable mouse support
 "set mouse=a
