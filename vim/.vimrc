@@ -20,11 +20,22 @@ Bundle 'edkolev/tmuxline.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/solarized'
 
+Plugin 'Yggdroot/indentLine'
+
+Plugin 'AndrewRadev/switch.vim'
+
+Plugin 'godlygeek/tabular'
+
+" Highlighting support for various languages
+Plugin 'nathanielc/vim-tickscript'
+Plugin 'hashivim/vim-terraform'
+
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
+Plugin 'taivop/vim-snippets'
+
 
 " NERDTree
 Plugin 'https://github.com/scrooloose/nerdtree.git'
@@ -44,10 +55,16 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+"https://stackoverflow.com/questions/4597721/syntax-highlight-for-ejs-files-in-vim
+au BufNewFile,BufRead *.ejs set filetype=html
+
 "leader
 let mapleader = ","
 map <leader>f :YcmCompleter FixIt<CR>
 map <leader>g :YcmCompleter GoTo<CR>
+
+" compilation
+noremap <Leader>b :w <bar> !make -C $(sed 's.src.build.g' <<< $(pwd)) --no-print-directory -j4<cr>
 
 let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -61,6 +78,7 @@ let g:UltiSnipsListSnippets="<c-l>"
 let g:snips_author = 'Taivo Pungas'
 let g:snips_email = 'taivo@pungas.ee'
 let g:snips_github = 'taivop'
+let g:ultisnips_python_style = 'numpy'
 
 " Nerdtree
 noremap <leader>n :NERDTreeToggle<cr>
@@ -73,11 +91,26 @@ nmap <Right> >>
 nmap <Left> <<
 nmap <Down> ddp
 nmap <Up> dd2kp
+vmap <Right> >
+vmap <Left> <
+
+noremap <Leader>w :w <cr>
+noremap <Leader>q :qa<cr>
 
 " Make tab characters appear 4 spaces wide
 set tabstop=4
-set softtabstop=0 noexpandtab
+set softtabstop=0 expandtab
 set shiftwidth=4
+
+" switch.vim
+let g:switch_mapping = "-"
+let g:switch_custom_definitions =
+    \ [
+    \   ['lat', 'lon', 'alt'],
+    \   ['x', 'y', 'z'],
+    \   ['True', 'False'],
+    \   ['or', 'and']
+    \ ]
 
 " Searching {{{
 set incsearch                   " incremental searching
@@ -91,11 +124,14 @@ set background=dark
 colorscheme solarized
 set t_Co=256
 
-let g:airline_theme='solarized'
+let g:airline_theme='bubblegum'
 let g:airline_solarized_bg='dark'
 
 let g:airline#extensions#tmuxline#enabled = 0
 let g:tmuxline_theme = 'airline_visual'
+
+let g:indentLine_setColors = 0
+let g:indentLine_char = '▏'
 
 set number			" Line numbers
 set numberwidth=3
@@ -103,7 +139,19 @@ set numberwidth=3
 " YCM configuration
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
+" godlygeek/tabular
+nnoremap <Leader>= :Tabularize /=<CR>
+vnoremap <Leader>= :Tabularize /=<CR>
+nnoremap <Leader>: :Tabularize /:\zs<CR>
+vnoremap <Leader>: :Tabularize /:\zs<CR>
+nnoremap <Leader>, :Tabularize /,\zs<CR>
+vnoremap <Leader>, :Tabularize /,\zs<CR>
+
+" nathanielc/vim-tickscript
+let g:tick_fmt_autosave = 0
+
 " Copy and pastes
+"set clipboard=unnamed
 vmap <Leader>y "+y
 vmap <Leader>d "+d
 nmap <Leader>p "+p
@@ -121,5 +169,8 @@ if has("unix")
 endif
 " }}}
 
+" Auto-remove trailing whitespace
+autocmd BufWritePre * %s/\s\+$//e
+
 " Enable mouse support
-set mouse=a
+"set mouse=a

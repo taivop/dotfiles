@@ -49,3 +49,25 @@ function o() {
     open "$@";
   fi;
 }
+
+function dldoc() {
+    local FILENAME=$1 &&
+    local TGT_DIR=${2-~/vfdata} &&
+    echo "Downloading $1 to $2" &&
+    ssh -t 10.1.2.254 "aws s3 cp ${FILENAME} ~/s3data/" &&
+    scp 10.1.2.254:~/s3data/`basename $FILENAME` $TGT_DIR 
+}
+
+function opendoc() {
+    local FILENAME=$1 &&
+    local TGT_DIR=${2-~/vfdata} &&
+    dldoc $FILENAME $TGT_DIR && open ${TGT_DIR}/`basename $FILENAME`
+}
+
+function cutvid() {
+    local VID_IN=$1 &&
+    local VID_OUT=$2 &&
+    local TS_START=$3 &&
+    local TS_END=$4
+    ffmpeg -i $VID_IN -ss $TS_START -t $TS_END -async 1 $VID_OUT 
+}

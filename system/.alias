@@ -2,22 +2,25 @@
 # https://stackoverflow.com/questions/394230/detect-the-os-from-a-bash-script
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	# Linux
-	alias open=xdg-open
-	alias ce="cd ~/echo"
-	alias cm="catkin_make"
-	alias cecm="cd ~/echo && catkin_make"
+	alias open="xdg-open 2>/dev/null"
 	alias vpn="cd ~/.vpn/ && sudo openvpn --config ~/.vpn/starship-vpn.ovpn"
 	alias sqlworkbench="sh ~/dw/workbench/sqlworkbench.sh &> /dev/null &"
 	alias robo3t="~/robo3t/bin/robo3t &> /dev/null &"
-	alias datagrip="sh ~/dw/DataGrip-2017.2.2/bin/datagrip.sh &> /dev/null &"
+	alias datagrip="sh ~/DataGrip-2018.2.4/bin/datagrip.sh &> /dev/null &"
 	alias xclip="xclip -selection clipboard"
+    alias rm="rm -I"
+	#alias PotreeConverter="~/echo/potree/PotreeConverter/build/PotreeConverter/PotreeConverter"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 	# Mac OSX
+    alias vim="mvim -v"
+    alias vi="mvim -v"
 	:
 else
 	# Unknown
 	:
 fi
+
+alias dbtunnel="ssh 10.1.2.254"
 
 # ---- Filesystem ----
 alias l="ls -lhap"       # List in long format, include dotfiles
@@ -47,7 +50,7 @@ alias top="htop"
 alias h="history"
 alias ccat='pygmentize -g'
 alias art="figlet -f banner"
-
+alias todo="grep -rne TODO"
 
 # ---- Colorisation ----
 GRC=$(which grc)

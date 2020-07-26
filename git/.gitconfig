@@ -1,10 +1,14 @@
 [user]
 	name = taivop
-	email = taivo.pungas@starship.co
+	email = taivo@pungas.ee
 [credential]
 	helper = store
 [push]
 	default = simple
 [core]
-	excludesfile = /home/taivo/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = vim #subl -n -w
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
