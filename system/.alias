@@ -46,7 +46,6 @@ alias pungasee="ssh -p 1022 vhost39151ssh@pungas.ee"
 alias top="htop"
 alias h="history"
 alias ccat='pygmentize -g'
-eval $(thefuck --alias)
 alias art="figlet -f banner"
 
 
