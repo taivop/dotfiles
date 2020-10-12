@@ -55,7 +55,7 @@ function dldoc() {
     local TGT_DIR=${2-~/vfdata} &&
     echo "Downloading $1 to $2" &&
     ssh -t 10.1.2.254 "aws s3 cp ${FILENAME} ~/s3data/" &&
-    scp 10.1.2.254:~/s3data/`basename $FILENAME` $TGT_DIR 
+    scp 10.1.2.254:~/s3data/`basename $FILENAME` $TGT_DIR
 }
 
 function opendoc() {
@@ -69,5 +69,18 @@ function cutvid() {
     local VID_OUT=$2 &&
     local TS_START=$3 &&
     local TS_END=$4
-    ffmpeg -i $VID_IN -ss $TS_START -t $TS_END -async 1 $VID_OUT 
+    ffmpeg -i $VID_IN -ss $TS_START -t $TS_END -async 1 $VID_OUT
+}
+
+# cc - browse chrome history
+cc() {
+  local cols sep
+  cols=$(( COLUMNS / 3 ))
+  sep='{::}'
+  cp -f ~/Library/Application\ Support/Google/Chrome/Default/History /tmp/h
+  sqlite3 -separator $sep /tmp/h \
+    "select substr(title, 1, $cols), url
+     from urls order by last_visit_time desc" |
+  awk -F $sep '{printf "%-'$cols's  \x1b[36m%s\x1b[m\n", $1, $2}' |
+  fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs open
 }

@@ -11,6 +11,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Autocompletion
 Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'vim-airline/vim-airline'
@@ -19,12 +20,15 @@ Bundle 'edkolev/tmuxline.vim'
 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/solarized'
+Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'Yggdroot/indentLine'
 
 Plugin 'AndrewRadev/switch.vim'
 
 Plugin 'godlygeek/tabular'
+
+Plugin 'psf/black'
 
 " Highlighting support for various languages
 Plugin 'nathanielc/vim-tickscript'
