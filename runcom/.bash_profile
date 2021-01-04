@@ -2,12 +2,6 @@
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/Users/taivo/.gvm/bin/gvm-init.sh" ]] && source "/Users/taivo/.gvm/bin/gvm-init.sh"
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 # require bashrc
 [[ -s ~/.bashrc ]] && source ~/.bashrc
 
@@ -24,6 +18,14 @@ if [ -f '/Users/taivo/google-cloud-sdk/path.bash.inc' ]; then . '/Users/taivo/go
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/taivo/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/taivo/google-cloud-sdk/completion.bash.inc'; fi
+
+# The next line enables shell command completion for kubernetes
+export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+source <(kubectl completion bash)
+# Use alias k for kubectl, while still allowing autocompletion
+complete -F __start_kubectl k
+
 
 export PATH="/usr/local/bin:$PATH"
 
