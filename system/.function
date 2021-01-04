@@ -84,3 +84,7 @@ cc() {
   awk -F $sep '{printf "%-'$cols's  \x1b[36m%s\x1b[m\n", $1, $2}' |
   fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs open
 }
+
+autoscreen() {
+	while [ 1 ];do vardate=$(date +%Y\-%m\-%d\_%H.%M.%S); screencapture -t jpg -x ./$vardate.jpg; sleep 10; done
+}
