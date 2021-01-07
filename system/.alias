@@ -23,7 +23,7 @@ fi
 alias dbtunnel="ssh 10.1.2.254"
 
 # ---- Filesystem ----
-alias l="ls -lhap"       # List in long format, include dotfiles
+alias l="exa -lha --sort newest --group-directories-first"       # List in long format, include dotfiles
 #alias ld="ls -ld */"   # List in long format, only directories
 alias ..="cd .."
 alias ...="cd ../.."
@@ -43,6 +43,9 @@ alias gcb='git copy-branch-name'
 alias gb='git branch'
 alias gst='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gac='git add -A && git commit -m'
+# Github
+# see https://cli.github.com/manual
+alias repo="gh repo view -w"
 
 # ---- k8s ----
 alias k='kubectl'
