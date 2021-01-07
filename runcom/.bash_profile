@@ -7,6 +7,24 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
+# git branch for iterm2 (Taivo)
+function iterm2_print_user_vars() {
+  iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
+}
+
+# Configure McFly for better ctrl-r search
+if [[ -r "/usr/local/opt/mcfly/mcfly.bash" ]]; then
+      source "/usr/local/opt/mcfly/mcfly.bash"
+fi
+
+# Preserve bash history. See https://askubuntu.com/questions/339546/how-do-i-see-the-history-of-the-commands-i-have-run-in-tmux
+# avoid duplicates..
+export HISTCONTROL=ignoredups:erasedups
+# append history entries..
+shopt -s histappend
+# After each command, save and reload history
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
 # Taivo's Dotfiles
 for DOTFILE in `find ~/.dotfiles/system`
 do
