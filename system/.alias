@@ -58,6 +58,8 @@ alias ccat='pygmentize -g'
 alias art="figlet -f banner"
 alias todo="grep -rne TODO"
 alias doco="docker-compose"
+alias jql="jq | less"
+alias wordcount="~/miniconda3/bin/python ~/repos/kb-tools/summarise.py"
 
 # ---- Colorisation ----
 GRC=$(which grc)
