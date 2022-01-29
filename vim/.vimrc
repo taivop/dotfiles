@@ -28,8 +28,6 @@ Plugin 'AndrewRadev/switch.vim'
 
 Plugin 'godlygeek/tabular'
 
-Plugin 'psf/black'
-
 " Highlighting support for various languages
 Plugin 'nathanielc/vim-tickscript'
 Plugin 'hashivim/vim-terraform'
